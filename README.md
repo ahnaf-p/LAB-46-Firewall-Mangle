@@ -53,25 +53,26 @@ Kamis 28 Agustus 2025
 ![](IMAGES/)  
 1. mark connection  
     Untuk menandai setiap paket yang melewati router dan juga menandai traffic request maupun response. Mark ini akan menandai paket yang pertama lewat kemudian semua packet yang satu koneksi dengan packet pertama akan mendapat marking yang sama. Karna packet belakangnya pasti mengikuti yang depan, maka COnnection mark ini hanya membutuhkan sedikit Resource dari RouterBoard.  
-![](IMAGES/)  
+![](IMAGES/connectmark.png)  
 Marking di Packet yang pertama.  
-![](IMAGES/)  
+![](IMAGES/neverssl.png)  
 Mark COnnection akan menandai packet pertama yang melewati router kemudian paket dibelakangnya akan menerima tanda yang sama. Mark ini akan menandai packet Request dan Response, maka secara otomatis paket Response dari internet juga akan mendapat marking yang sama.  
-![](IMAGES/)
+![](IMAGES/mark1.png)  
   Contoh Penggunaan:  
 Kita akan melakukan marking sesuai dengan konten yang diakses user. Misalnya melakukan connection marking pada content file berekstensi *.rar.  
-![](IMAGES/)  
+![](IMAGES/mark2.png)  
 Keterangan:  
 - Chain=prerouting, chain yang digunakan untuk melakukan marking pada paket yang akan keluar dari router.  
 - src-address, sumber yang mengeluarkan paket.  
 - protocol=tcp port=8-, karena kita akan melakukan marking pada aktifitas HTTP, maka mengunakan protocol TCP dan 80.  
 - in-interface=ether2, masuk memalui ether2  
-- action=mark-connection, untuk menandai koneksi
-- new-connection-mark=browsing, nama
-  Untuk melakukan pengecekan, bisa kita lihat pada menu IP > Firewall > Mangle­ lalu lihat di bagian Packets. Setelah itu, kita test melakukan browsing, misalnya membuka website neverssl.com.
-![](IMAGES/)
+- action=mark-connection, untuk menandai koneksi  
+- new-connection-mark=browsing, nama  
+  Untuk melakukan pengecekan, bisa kita lihat pada menu IP > Firewall > Mangle­ lalu lihat di bagian Packets. Setelah itu, kita test melakukan browsing, misalnya membuka website neverssl.com.  
+![](IMAGES/mark3.png)  
 Bisa kita lihat dipagian packets, PC Client membuat beberapa koneksi saat membuka website tersebut digunakan untuk membuka content misalny gambar atau link pada website tersebut.  
 3. mark packet  
-    Untuk menandai 1 koneksi baik itu untuk request maupun response. Atau menandai setiap packet yang melewati router. Jadi kita akan terus bertanya kepada packet yang lewat dan menandainya satu-persatu.
+    Untuk menandai 1 koneksi baik itu untuk request maupun response. Atau menandai setiap packet yang melewati router. Jadi kita akan terus bertanya kepada packet yang lewat dan menandainya satu-persatu.  
+![](IMAGES/mark4.png)  
 4. mark routing  
-    Digunakan untuk pemilihan jalur routing, semisal kita mengunakan 2 ISP maka kita bisa menentukan ISP mana yang akan digunakan setiap client mengunakan marking ini.   
+    Digunakan untuk pemilihan jalur routing, semisal kita mengunakan 2 ISP maka kita bisa menentukan ISP mana yang akan digunakan setiap client mengunakan marking ini.  

@@ -2,10 +2,11 @@
 Kamis 28 Agustus 2025  
   
 # Mangle
+![](IMAGES/mangle.png)  
   FIrewall mangle digunakan untuk menandai sebuah koneksi atau paket dengan tanda khusus untuk pemrosesan selanjutnya, yang mana biasanya mark ini digunakan pada fitur lainnya seperti routing, mark ini hanya bekerja di dalam router untuk di proses dan juga dengan mangle admin dapat mengubah IP header pada paket yang ditentukan. Fitur Mangle ini hanya bisa digunakan pada router MikroTik itu sendiri dan tidak dapat digunakan oleh router lain. Karna karking tersebut akan dilepas pada saat paket data akan keluar / meninggalkan router.  
-
+  
 # Chain
-![](IMAGES/)  
+![](IMAGES/rantai.png)  
   1. Prerouting, untuk traffic yang masuk dan melewati router, tidak bisa memilih out interface. Berlaku untuk paket yang baru saja tiba di interface jaringan.  
   2. Forward, untuk traffic yang melewati router.  
   3. Postrouting, untuk traffic yang keluar dan melewati router, tidak bisa memilih in interface. BErlaku untuk paket yang hanya meninggalkan interface jaringan
@@ -13,7 +14,7 @@ Kamis 28 Agustus 2025
   5. Output, Untuk traffic yang keluar dari router, tidak bisa memilih in interface. Berlaku untuk paket apapun yang dirutekan melalui host saat ini.  
   
 # Action
-![](IMAGES/)  
+![](IMAGES/aksi.png)  
 1. accept  
    Menerima paket, tidak akan diproses pada rule berikutnya.  
 2. add dst to address list  

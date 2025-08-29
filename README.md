@@ -73,10 +73,10 @@ Keterangan:
   Untuk melakukan pengecekan, bisa kita lihat pada menu IP > Firewall > Mangle­ lalu lihat di bagian Packets. Setelah itu, kita test melakukan browsing, misalnya membuka website neverssl.com.  
 ![](IMAGES/mark3.png)  
 Bisa kita lihat dipagian packets, PC Client membuat beberapa koneksi saat membuka website tersebut digunakan untuk membuka content misalny gambar atau link pada website tersebut.  
-3. mark packet  
+2. mark packet  
     Untuk menandai 1 koneksi baik itu untuk request maupun response. Atau menandai setiap packet yang melewati router. Jadi kita akan terus bertanya kepada packet yang lewat dan menandainya satu-persatu.  
 ![](IMAGES/mark4.png)  
-4. mark routing  
+3. mark routing  
     Digunakan untuk pemilihan jalur routing, semisal kita mengunakan 2 ISP maka kita bisa menentukan ISP mana yang akan digunakan setiap client mengunakan marking ini.  
 
 # Kesimpulan

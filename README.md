@@ -3,7 +3,7 @@ Kamis 28 Agustus 2025
   
 # Mangle
 ![](IMAGES/mangle.png)  
-  FIrewall mangle digunakan untuk menandai sebuah koneksi atau paket dengan tanda khusus untuk pemrosesan selanjutnya, yang mana biasanya mark ini digunakan pada fitur lainnya seperti routing, mark ini hanya bekerja di dalam router untuk di proses dan juga dengan mangle admin dapat mengubah IP header pada paket yang ditentukan. Fitur Mangle ini hanya bisa digunakan pada router MikroTik itu sendiri dan tidak dapat digunakan oleh router lain. Karna karking tersebut akan dilepas pada saat paket data akan keluar / meninggalkan router.  
+  Firewall mangle digunakan untuk menandai sebuah koneksi atau paket dengan tanda khusus untuk pemrosesan selanjutnya, yang mana biasanya mark ini digunakan pada fitur lainnya seperti routing, mark ini hanya bekerja di dalam router untuk di proses dan juga dengan mangle admin dapat mengubah IP header pada paket yang ditentukan. Fitur Mangle ini hanya bisa digunakan pada router MikroTik itu sendiri dan tidak dapat digunakan oleh router lain. Karna karking tersebut akan dilepas pada saat paket data akan keluar / meninggalkan router.  
   
 # Chain
 ![](IMAGES/rantai.png)  
@@ -26,8 +26,9 @@ Kamis 28 Agustus 2025
 5. change MSS  
    Mengubah parameter MSS (Maximum Segmen Size) pada header sebuah paket, biasanya diterapkan pada koneksi VPN.  
 6. change TTL  
-   mengubah parameter TTL (Time To Live) pada header sebuah paket  
-7. Clear DF
+   mengubah parameter TTL (Time To Live) pada header sebuah paket. Disini saya akan mengubah TTL dari Client ke Mikrotik.
+![](IMAGES/waktuuntukhidup.png)    
+8. Clear DF
    Menghapus flag DF agar paket bisa di fragmentasi.  
 9. Fasttrack connection  
    Untuk mempercepat pemrosesan paket, bypass paket di rule selanjutnya.  
@@ -77,3 +78,6 @@ Bisa kita lihat dipagian packets, PC Client membuat beberapa koneksi saat membuk
 ![](IMAGES/mark4.png)  
 4. mark routing  
     Digunakan untuk pemilihan jalur routing, semisal kita mengunakan 2 ISP maka kita bisa menentukan ISP mana yang akan digunakan setiap client mengunakan marking ini.  
+
+# Kesimpulan
+  Firewall mangle digunakan untuk menandai sebuah koneksi atau paket dengan tanda khusus untuk pemrosesan selanjutnya, yang mana biasanya mark ini digunakan pada fitur lainnya seperti routing.  
